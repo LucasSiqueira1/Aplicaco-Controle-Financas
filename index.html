@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Finanças</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="./imagens/logoAlternativo.svg" id="logo" alt="Logo Finanças">
+    </header>
+
+    <main class="container">
+        <div class="cont">
+
+        </div>
+        <section id="balanco">
+            <h2 class="acessibilidade">Balanço</h2>
+
+            <div class="card">
+                <h3>
+                    Entradas
+                    <img src="./imagens/income.svg" alt="Imagem de Entradas">
+                </h3>
+                <p id="entradaDisplay"> </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    Saídas
+                    <img src="./imagens/expense.svg" alt="Imagem de Saídas">
+                </h3>
+                <p id="saidaDisplay"> </p>
+            </div>
+
+            <div class="card total">
+                <h3>
+                    Total
+                    <img src="./imagens/total.svg" alt="Imagem de Total">
+                </h3>
+                <p id="totalDisplay"> </p>
+            </div>
+        </section>
+
+
+        <section id="transacoes">
+            <h2 class="acessibilidade">Transações</h2>
+
+            <a href="#" onclick="modelo.open()" class="button new">-> + Nova Transação</a>
+
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+
+    <!--Div com o modelo e um FORM para criar uma nova transação-->
+    <div class="modeloTransacao">
+        <div class="modelo">
+            <div class="form">
+                <h2>Nova Transação</h2> <!-- Form para capturar dados-->
+                <form action="" onSubmit="formulario.submit(event)">
+                    <div class="inputGrupo">
+                        <label class="acessibilidade" for="descricao"></label>
+                        <input type="text" name="descricao" id="descricao" placeholder="Descrição" />
+                    </div>
+
+                    <div class="inputGrupo">
+                        <label class="acessibilidade" for="valor"></label>
+                        <input type="number" step="0.05" name="valor" id="valor" placeholder="R$ 0,00" />
+                        <small class="ajuda">Use o sinal '-' (negativo), para representar despesas e ',' para
+                            representas
+                            casas decimais.
+                        </small>
+                    </div>
+
+                    <div class="inputGrupo">
+                        <label class="acessibilidade" for="data"></label>
+                        <input type="date" name="data" id="data" />
+                    </div>
+
+
+                    <div class="inputGrupo acoes">
+                        <a href="#" onclick="modelo.close()" class="button cancel">Cancelar</a>
+                        <button> Salvar </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <small id="obs">
+        Obs:Logo após colocar sua transação -> Caso necessário, clique no símbolo ( - ) em vermelho, para
+        remover
+        a transação
+        desejada.
+    </small>
+
+
+    <script src="./scripts.js"> </script>
+
+
+    <footer>
+        <p>2021 - Controle de Finanças</p>
+    </footer>
+
+</body>
+
+</html>
